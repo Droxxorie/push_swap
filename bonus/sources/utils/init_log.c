@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 11:35:28 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/15 11:35:28 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:41:15 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:41:15 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_log	*init_log(int	initial_capacity)
+t_log	*init_log(int initial_capacity)
 {
 	t_log	*log;
 

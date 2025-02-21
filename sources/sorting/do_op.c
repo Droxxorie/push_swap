@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 00:13:41 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 00:13:41 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:58:47 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:58:47 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // [cost, ra, rb, rr, rra, rrb, rrr]
 // apply the minimum cost operation
-void do_op(t_stack	*a, t_stack	*b, t_log	*log, int	*cost)
+void	do_op(t_stack	*a, t_stack	*b, t_log	*log, int	*cost)
 {
 	int	cost_temp[7];
 	int	i;

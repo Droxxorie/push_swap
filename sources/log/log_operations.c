@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 22:55:27 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 22:55:27 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:41:29 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:41:29 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static	void	expend_log(t_log *log)
 
 	new_capacity = log->capacity + 10;
 	new_entries = (char **)malloc(sizeof(char *) * new_capacity);
-	if(!new_entries)
-		return;
+	if (!new_entries)
+		return ;
 	i = 0;
 	while (i < log->index)
 	{
@@ -33,10 +33,10 @@ static	void	expend_log(t_log *log)
 	log->capacity = new_capacity;
 }
 
-void	log_operations(t_log	*log, char	*operation)
+void	log_operations(t_log *log, char	*operation)
 {
 	if (log->index >= log->capacity)
-		expend_log(log);	
+		expend_log(log);
 	log->entries[log->index] = ft_strdup(operation);
 	log->index++;
 }

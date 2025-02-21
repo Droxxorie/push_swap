@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 21:03:55 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 21:03:55 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:59:09 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:59:09 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void dynamic_insertion_sort(t_stack *a, t_stack *b, t_log *log)
+void	dynamic_insertion_sort(t_stack *a, t_stack *b, t_log *log)
 {
 	int	cost[7];
 	int	temp[7];

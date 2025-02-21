@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 20:40:23 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/13 20:40:23 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:38:32 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:38:32 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	int	*create_array(int	argc, char **argv)
+static	int	*create_array(int argc, char **argv)
 {
 	int	i;
 	int	*array;
@@ -23,7 +23,6 @@ static	int	*create_array(int	argc, char **argv)
 	i = 0;
 	while (i < argc - 1)
 	{
-		
 		array[i] = ft_atoi_long(argv[i + 1]);
 		if (array[i] == 0 && argv[i + 1][0] != '0')
 		{
@@ -35,7 +34,7 @@ static	int	*create_array(int	argc, char **argv)
 	return (array);
 }
 
-static	int	*init_1(int	argc, char	**argv)
+static	int	*init_1(int argc, char	**argv)
 {
 	int	*array;
 	int	i;
@@ -62,7 +61,7 @@ static	int	*init_1(int	argc, char	**argv)
 	return (array);
 }
 
-static	void	stack_in_stack(t_stack	*stack, int	*array, int	size)
+static	void	stack_in_stack(t_stack	*stack, int *array, int size)
 {
 	int	i;
 
@@ -74,19 +73,21 @@ static	void	stack_in_stack(t_stack	*stack, int	*array, int	size)
 	}
 	free(array);
 }
-// Initialize the stacks, creat an array from input, check errors, normalise the array and fill stack a, return the stacks
-void	initialize(int	argc, char **argv, t_stack *a, t_stack *b)
+
+// Initialize the stacks, creat an array from input, check errors
+// normalise the array and fill stack a, return the stacks
+void	initialize(int argc, char **argv, t_stack *a, t_stack *b)
 {
 	int	*array;
 
 	array = init_1(argc, argv);
 	if (!array)
-		return;
+		return ;
 	init_stack(a, argc - 1);
 	init_stack(b, argc - 1);
 	if (!a->array || !b->array)
-		return;
+		return ;
 	stack_in_stack(a, array, argc - 1);
 	a->top = 0;
-	return;
+	return ;
 }

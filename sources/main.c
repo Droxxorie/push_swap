@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 14:00:00 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/15 14:00:00 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:20:01 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:20:01 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static	void	free_all(t_stack *a, t_stack *b, t_log *log)
 		free_log(log);
 }
 
-int	main(int	argc, char **argv)
+int	main(int argc, char	**argv)
 {
 	t_stack	a;
 	t_stack	b;

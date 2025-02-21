@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/19 11:38:34 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/19 11:38:34 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 23:04:11 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 23:04:11 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,23 @@ void	sort_three(t_stack	*a, t_log	*log)
 	int	middle;
 	int	bottom;
 
-	if (a->size - a->top != 3 || stack_is_sorted(a)) // 123
+	if (a->size - a->top != 3 || stack_is_sorted(a))
 		return ;
 	top = a->array[a->top];
 	middle = a->array[a->top + 1];
 	bottom = a->array[a->size - 1];
-	if (top > middle && middle < bottom && top < bottom) // 213
+	if (top > middle && middle < bottom && top < bottom)
 		sa(a, log);
-	else if (top > middle && middle > bottom) // 321
+	else if (top > middle && middle > bottom)
 	{
 		ra(a, log);
 		sa(a, log);
 	}
-	else if (top > middle && middle < bottom && top > bottom) // 312
+	else if (top > middle && middle < bottom && top > bottom)
 		ra(a, log);
-	else if (top < middle && middle > bottom && top > bottom) // 231
+	else if (top < middle && middle > bottom && top > bottom)
 		rra(a, log);
-	else if (top < middle && middle > bottom && top < bottom) // 132
+	else if (top < middle && middle > bottom && top < bottom)
 	{
 		sa(a, log);
 		ra(a, log);

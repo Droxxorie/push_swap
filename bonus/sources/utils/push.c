@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 16:33:00 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/14 16:33:00 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:43:16 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:43:16 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static	void	push(t_stack *stack, int data)
 {
 	if (stack_is_full(stack))
-		return;
+		return ;
 	stack->top--;
 	stack->array[stack->top] = data;
 }
@@ -27,7 +27,7 @@ static	int	pop(t_stack *stack)
 	int	data;
 
 	if (stack_is_empty(stack))
-		return -5;
+		return (-5);
 	data = stack->array[stack->top];
 	stack->top++;
 	return (data);
@@ -36,7 +36,7 @@ static	int	pop(t_stack *stack)
 void	pa(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	if (stack_is_empty(b))
-		return;
+		return ;
 	push(a, pop(b));
 	log_operations(log, "pa");
 }
@@ -44,7 +44,7 @@ void	pa(t_stack	*a, t_stack	*b, t_log	*log)
 void	pb(t_stack	*b, t_stack	*a, t_log	*log)
 {
 	if (stack_is_empty(a))
-		return;
+		return ;
 	push(b, pop(a));
 	log_operations(log, "pb");
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 15:10:22 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/21 15:10:22 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 23:42:35 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 23:42:35 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static	int	check_operation(char *line)
 }
 
 // Apply the operation to the stack
-static	void	apply_operation(t_stack	*a, t_stack	*b, t_log	*log,	char *op)
+static void	apply_operation(t_stack *a, t_stack *b, t_log *log, char *op)
 {
 	if (!ft_strcmp(op, "sa"))
 		sa(a, log);
@@ -77,7 +77,7 @@ static	void	small_parse(char *str)
 		if (str[i] == '\n')
 		{
 			str[i] = '\0';
-			return;
+			return ;
 		}
 		i++;
 	}
@@ -90,7 +90,7 @@ void	checker(t_stack	*a, t_stack	*b, t_log	*log)
 
 	line = get_next_line(0);
 	if (!line)
-		return;
+		return ;
 	while (line)
 	{
 		small_parse(line);
@@ -98,7 +98,7 @@ void	checker(t_stack	*a, t_stack	*b, t_log	*log)
 		{
 			free(line);
 			ft_putstr_fd("Error\n", 2);
-			return;
+			return ;
 		}
 		apply_operation(a, b, log, line);
 		free(line);
@@ -106,5 +106,3 @@ void	checker(t_stack	*a, t_stack	*b, t_log	*log)
 	}
 	free(line);
 }
-
-

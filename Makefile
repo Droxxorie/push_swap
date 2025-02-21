@@ -6,7 +6,7 @@
 #    By: eraad <eraad@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 14:33:34 by eraad             #+#    #+#              #
-#    Updated: 2025/02/21 20:21:36 by eraad            ###   ########.fr        #
+#    Updated: 2025/02/21 22:06:53 by eraad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,11 +74,13 @@ $(BONUS_OBJS_DIR)%.o: $(BONUS_SRCS_DIR)%.c
 clean:
 				@echo "$(Y)- Cleaning object files...$(DEF)"
 				@rm -rf $(OBJS_DIR)
+				@rm -rf $(BONUS_OBJS_DIR)
 				@echo "$(R)- Object files cleaned!$(DEF)"
 
 fclean: clean
 				@echo "$(Y)- Cleaning all build files...$(DEF)"
 				@rm -f $(NAME)
+				@rm -f $(BONUS_NAME)
 				@echo "$(R) $(NAME) Cleaned! $(DEF)"
 
 re: fclean $(NAME)

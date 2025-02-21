@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 00:43:12 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/13 00:43:12 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:46:56 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:46:56 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // swap two pointers
-static void swap(int	*a, int	*b)
+static	void	swap(int *a, int *b)
 {
 	int	temp;
 
@@ -23,7 +23,7 @@ static void swap(int	*a, int	*b)
 }
 
 // chunking of the array to sort
-static int	partition(int	*array, int	low, int	high)
+static	int	partition(int *array, int low, int high)
 {
 	int	pivot;
 	int	i;
@@ -43,7 +43,7 @@ static int	partition(int	*array, int	low, int	high)
 }
 
 // quick sort algo
-static void	normalise_quick_sort (int	*array, int	low, int	high)
+static	void	normalise_quick_sort(int *array, int low, int high)
 {
 	int	pivot;
 
@@ -55,7 +55,7 @@ static void	normalise_quick_sort (int	*array, int	low, int	high)
 	}
 }
 
-static	int	binary_search(int	*array, int	size, int	target)
+static	int	binary_search(int *array, int size, int target)
 {
 	int	left;
 	int	right;
@@ -68,7 +68,7 @@ static	int	binary_search(int	*array, int	size, int	target)
 		middle = left + ((right - left) / 2);
 		if (array[middle] == target)
 			return (middle);
-		else if (array[middle] <  target)
+		else if (array[middle] < target)
 			left = middle + 1;
 		else
 			right = middle - 1;
@@ -77,14 +77,14 @@ static	int	binary_search(int	*array, int	size, int	target)
 }
 
 //normalise the input as an array so we work only with Natural numbers
-void	normalise(int	*array, int	size)
+void	normalise(int *array, int size)
 {
 	int	*sorted_array;
 	int	i;
 
 	sorted_array = malloc(size * sizeof(int));
 	if (!sorted_array)
-		return;
+		return ;
 	i = -1;
 	while (++i < size)
 		sorted_array[i] = array[i];
@@ -94,7 +94,7 @@ void	normalise(int	*array, int	size)
 	{
 		array[i] = binary_search(sorted_array, size, array[i]);
 		if (array[i] == -1)
-			return;
+			return ;
 	}
 	free(sorted_array);
 }

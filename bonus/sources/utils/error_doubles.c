@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_for_doubles.c                                :+:      :+:    :+:   */
+/*   error_doubles.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 00:35:40 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/13 00:35:40 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:24:46 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:24:46 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
 //Check if each element is unique, return 1 if it is not the case
-int	error_doubles(int	argc, int	*array)
+int	error_doubles(int argc, int *array)
 {
 	int	i;
 	int	j;

@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 21:10:45 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 21:10:45 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 23:03:58 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 23:03:58 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 // sort back the stack a by ra or rra
-void sort_back_a(t_stack	*a, t_log	*log)
+void	sort_back_a(t_stack	*a, t_log	*log)
 {
 	int	min_index;
 	int	rotations;

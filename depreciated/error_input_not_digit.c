@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stock_in_array.c                                   :+:      :+:    :+:   */
+/*   error_input_not_digit.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 00:17:52 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/13 00:17:52 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:45:58 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:45:58 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-//transform and stock the input into an int array
-int	*stock_in_array(int	argc, char **argv)
+// Check if an elements of argv is digits
+// return 1 if it find an error and 1 otherwise
+int	error_input_not_digit(char *str)
 {
 	int	i;
-	int	*array;
 
-	array = malloc((argc - 1) * sizeof(int));
-	if (!array)
-		return (NULL);
 	i = 0;
-	while (i < argc - 1)
-	{
-		
-		array[i] = ft_atoi_long(argv[i + 1]);
-		if (array[i] == 0 && argv[i + 1][0] != '0')
-		{
-			free(array);
-			return (NULL);
-		}
+	if ((str[i] == '+') || (str[i] == '-'))
 		i++;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]))
+			i++;
+		else
+			return (1);
 	}
-	return (array);
+	return (0);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/15 10:14:53 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/15 10:14:53 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 22:44:47 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 22:44:47 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	rb(t_stack	*b, t_log	*log)
 	log_operations(log, "rb");
 }
 
-void rr(t_stack	*a, t_stack	*b, t_log	*log)
+void	rr(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	rotate(a);
 	rotate(b);

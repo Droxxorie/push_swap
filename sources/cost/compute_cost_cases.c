@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 12:33:55 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/18 12:33:55 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/21 23:20:38 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/21 23:20:38 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // [cost, ra, rb, rr, rra, rrb, rrr]
 // ra + rb - rr and bias added to favor rr
-void	compute_cost_case_1(int	n_ra, int	n_rb, int	*cost)
+void	compute_cost_case_1(int n_ra, int n_rb, int *cost)
 {
 	int	n_rr;
 
@@ -29,7 +29,7 @@ void	compute_cost_case_1(int	n_ra, int	n_rb, int	*cost)
 }
 
 // ra + rrb
-void	compute_cost_case_2(int	n_ra, int	n_rrb, int	*cost)
+void	compute_cost_case_2(int n_ra, int n_rrb, int *cost)
 {
 	cost[0] = n_ra + n_rrb;
 	cost[1] = n_ra;
@@ -41,7 +41,7 @@ void	compute_cost_case_2(int	n_ra, int	n_rrb, int	*cost)
 }
 
 // rra + rb
-void	compute_cost_case_3(int	n_rra, int	n_rb, int	*cost)
+void	compute_cost_case_3(int n_rra, int n_rb, int *cost)
 {
 	cost[0] = n_rra + n_rb;
 	cost[1] = 0;
@@ -53,7 +53,7 @@ void	compute_cost_case_3(int	n_rra, int	n_rb, int	*cost)
 }
 
 // rra + rrb - rrr and bias added to favor rrr
-void	compute_cost_case_4(int	n_rra, int	n_rrb, int	*cost)
+void	compute_cost_case_4(int n_rra, int n_rrb, int *cost)
 {
 	int	n_rrr;
 
