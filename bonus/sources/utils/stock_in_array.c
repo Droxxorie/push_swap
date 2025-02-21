@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dynamic_insertion_sort.c                           :+:      :+:    :+:   */
+/*   stock_in_array.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 21:03:55 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 21:03:55 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/13 00:17:52 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/13 00:17:52 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void dynamic_insertion_sort(t_stack *a, t_stack *b, t_log *log)
+//transform and stock the input into an int array
+int	*stock_in_array(int	argc, char **argv)
 {
-	int	cost[7];
-	int	temp[7];
 	int	i;
-	int	j;
+	int	*array;
 
-	while (!stack_is_empty(b))
+	array = malloc((argc - 1) * sizeof(int));
+	if (!array)
+		return (NULL);
+	i = 0;
+	while (i < argc - 1)
 	{
-		compute_cost(a, b, b->top, cost);
-		i = b->top + 1;
-		while (i < b->size)
+		
+		array[i] = ft_atoi_long(argv[i + 1]);
+		if (array[i] == 0 && argv[i + 1][0] != '0')
 		{
-			compute_cost(a, b, i, temp);
-			if (temp[0] < cost[0])
-			{
-				j = 0;
-				while (j < 7)
-				{
-					cost[j] = temp[j];
-					j++;
-				}
-			}
-			i++;
+			free(array);
+			return (NULL);
 		}
-		do_op(a, b, log, cost);
+		i++;
 	}
+	return (array);
 }

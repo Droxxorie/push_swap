@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   check_for_doubles.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 23:02:54 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 23:02:54 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/13 00:35:40 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/13 00:35:40 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_stack(t_stack	*stack)
+//Check if each element is unique, return 1 if it is not the case
+int	error_doubles(int	argc, int	*array)
 {
-	if (!stack || !stack->array)
-		return;
-	free(stack->array);
-	free(stack);
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < argc - 1)
+	{
+		j = i + 1;
+		while (j < argc - 1)
+		{
+			if (array[i] == array[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

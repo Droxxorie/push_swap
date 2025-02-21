@@ -41,8 +41,8 @@ void	evaluate_percentile(t_stack	*a, t_stack	*b, int percent_1, int	percent_2, t
 void	find_best_percentiles(t_stack	*a, t_stack	*b, int	*percentile_1, int	*percentile_2)
 {
 	t_percentiles	best_percents;
-	int	percent_1;
-	int	percent_2;
+	int				percent_1;
+	int				percent_2;
 
 	best_percents.min_ops = INT_MAX;
 	best_percents.percentile_1 = 5;
@@ -83,6 +83,4 @@ void	push_swap(t_stack	*a, t_stack	*b, t_log	*log)
 		dynamic_insertion_sort(a, b, log);
 		sort_back_a(a, log);
 	}
-	free_stack(a);
-	free_stack(b);
 }

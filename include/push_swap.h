@@ -68,7 +68,6 @@ int		error_doubles(int	argc, int	*array);
 
 // Parsing
 long	ft_atoi_long(const char *nptr);
-int		*stock_in_array(int	argc, char **argv);
 void	normalise(int	*array, int	size);
 
 
@@ -104,11 +103,11 @@ int		compute_n_rr(int n_ra, int n_rb);
 int		compute_n_rra(t_stack	*a, t_stack	*b, int	i);
 int		compute_n_rrb(t_stack	*b, int	i);
 int		compute_n_rrr(int	n_rra, int	n_rrb);
-int		*compute_cost_case_1(int	n_ra, int	n_rb);
-int		*compute_cost_case_2(int	n_ra, int	n_rrb);
-int		*compute_cost_case_3(int	n_rra, int	n_rb);
-int		*compute_cost_case_4(int	n_rra, int	n_rrb);
-int		*compute_cost(t_stack *a, t_stack *b, int	i);
+void	compute_cost_case_1(int	n_ra, int	n_rb, int	*cost);
+void	compute_cost_case_2(int	n_ra, int	n_rrb, int	*cost);
+void	compute_cost_case_3(int	n_rra, int	n_rb, int	*cost);
+void	compute_cost_case_4(int	n_rra, int	n_rrb, int	*cost);
+void	compute_cost(t_stack *a, t_stack *b, int	i, int	*cost);
 
 
 // Sorting

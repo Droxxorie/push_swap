@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   stack_is_empty.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 23:02:54 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 23:02:54 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/15 13:53:55 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/15 13:53:55 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_stack(t_stack	*stack)
+// Check if the stack is empty by looking at top index, return 1 if empty, 0 if not
+int	stack_is_empty(t_stack	*stack)
 {
-	if (!stack || !stack->array)
-		return;
-	free(stack->array);
-	free(stack);
+	if (stack->top >= stack->size)
+		return (1);
+	return (0);
 }

@@ -6,16 +6,17 @@
 #    By: eraad <eraad@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 14:33:34 by eraad             #+#    #+#              #
-#    Updated: 2025/02/21 13:52:23 by eraad            ###   ########.fr        #
+#    Updated: 2025/02/21 20:21:36 by eraad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Variables
-
 NAME		= push_swap
+BONUS_NAME	= checker
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -ggdb3
 INCLUDE		= -I./include
+BONUS_INCLUDE	= -I./bonus/include
 
 #Colors
 DEF = \033[0m
@@ -34,23 +35,41 @@ SRC_FILES	= $(wildcard $(SRCS_DIR)error/*.c) \
 			  $(wildcard $(SRCS_DIR)utils/*.c) \
 			  $(wildcard $(SRCS_DIR)cost/*.c) \
 			  $(wildcard $(SRCS_DIR)stack/*.c) \
-			  $(SRCS_DIR)main.c
+			  $(wildcard $(SRCS_DIR)/*.c)
+
+#Bonus
+BONUS_SRCS_DIR	= bonus/sources/
+BONUS_SRC_FILES	= $(wildcard $(BONUS_SRCS_DIR)*.c) \
+			  $(wildcard $(BONUS_SRCS_DIR)utils/*.c) \
 
 #Objects
 OBJS_DIR	= objects/
 OBJS		= $(patsubst $(SRCS_DIR)%.c, $(OBJS_DIR)%.o, $(SRC_FILES))
+BONUS_OBJS_DIR	= bonus/objects/
+BONUS_OBJS	= $(patsubst $(BONUS_SRCS_DIR)%.c, $(BONUS_OBJS_DIR)%.o, $(BONUS_SRC_FILES))
 
 #Rules
-$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
 				@echo "$(Y)- Creating $(NAME)...$(DEF)"
 				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 				@echo "$(G)--- push_swap compiled succesfully! ---$(DEF)"
+
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.c
+				@mkdir -p $(dir $@)
+				@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
+
+bonus: all $(BONUS_NAME)
+
+$(BONUS_NAME): $(BONUS_OBJS)
+				@echo "$(Y)- Creating $(BONUS_NAME)...$(DEF)"
+				@$(CC) $(CFLAGS) $(BONUS_OBJS) -o $(BONUS_NAME)
+				@echo "$(G)--- checker compiled succesfully! ---$(DEF)"
+
+$(BONUS_OBJS_DIR)%.o: $(BONUS_SRCS_DIR)%.c
+				@mkdir -p $(dir $@)
+				@$(CC) $(CFLAGS) $(BONUS_INCLUDE) -c -o $@ $<
 
 clean:
 				@echo "$(Y)- Cleaning object files...$(DEF)"
@@ -64,4 +83,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

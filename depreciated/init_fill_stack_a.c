@@ -1,42 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dynamic_insertion_sort.c                           :+:      :+:    :+:   */
+/*   init_fill_stack_a.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 21:03:55 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 21:03:55 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/13 20:31:13 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/13 20:31:13 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void dynamic_insertion_sort(t_stack *a, t_stack *b, t_log *log)
+// Fill the stack a with the provided array
+int	fill_stack_a(t_stack *stacks, int *array, int size)
 {
-	int	cost[7];
-	int	temp[7];
+	t_list	*new;
+	int	*data;
 	int	i;
-	int	j;
 
-	while (!stack_is_empty(b))
+	i = 0;
+	while (i < size)
 	{
-		compute_cost(a, b, b->top, cost);
-		i = b->top + 1;
-		while (i < b->size)
+		data = malloc(sizeof(int));
+		if (!data)
 		{
-			compute_cost(a, b, i, temp);
-			if (temp[0] < cost[0])
-			{
-				j = 0;
-				while (j < 7)
-				{
-					cost[j] = temp[j];
-					j++;
-				}
-			}
-			i++;
+			ft_lstclear(&stacks->a, free);
+			return (0);
 		}
-		do_op(a, b, log, cost);
+		*data = array[i];
+		new = ft_lstnew(data);
+		if (!new)
+		{
+			free(data);
+			ft_lstclear(&stacks->a, free);
+			return (0);
+		}
+		ft_lstadd_back(&stacks->a, new);
+		i++;
 	}
+	return (1);
 }

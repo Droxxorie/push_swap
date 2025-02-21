@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   init_log.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 23:02:54 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 23:02:54 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/15 11:35:28 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/15 11:35:28 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_stack(t_stack	*stack)
+t_log	*init_log(int	initial_capacity)
 {
-	if (!stack || !stack->array)
-		return;
-	free(stack->array);
-	free(stack);
+	t_log	*log;
+
+	log = (t_log *)malloc(sizeof(t_log));
+	if (!log)
+		return (NULL);
+	log->entries = (char **)malloc(sizeof(char *) * initial_capacity);
+	if (!log->entries)
+	{
+		free(log);
+		return (NULL);
+	}
+	log->index = 0;
+	log->capacity = initial_capacity;
+	return (log);
 }

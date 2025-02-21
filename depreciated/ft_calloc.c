@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 23:02:54 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 23:02:54 by eraad            ###   ########.fr       */
+/*   Created: 2024/12/03 15:25:22 by eraad             #+#    #+#             */
+/*   Updated: 2024/12/03 15:25:22 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_stack	*stack)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	if (!stack || !stack->array)
-		return;
-	free(stack->array);
-	free(stack);
+	void	*array;
+
+	array = malloc(nmemb * size);
+	if (!array)
+		return (0);
+	ft_memset(array, 0, nmemb * size);
+	return (array);
 }

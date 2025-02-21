@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	free_stack(t_stack	*stack)
 {
-	if (!stack || !stack->array)
+	if (!stack)
 		return;
-	free(stack->array);
-	free(stack);
+	if (stack->array)
+	{
+		free(stack->array);
+		stack->array = NULL;
+	}
 }

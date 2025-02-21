@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 23:02:54 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/20 23:02:54 by eraad            ###   ########.fr       */
+/*   Created: 2025/02/20 22:03:51 by eraad             #+#    #+#             */
+/*   Updated: 2025/02/20 22:03:51 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_stack(t_stack	*stack)
+int	ft_strcmp(const	char *s1, const char *s2)
 {
-	if (!stack || !stack->array)
-		return;
-	free(stack->array);
-	free(stack);
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

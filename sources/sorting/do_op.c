@@ -19,9 +19,12 @@ void do_op(t_stack	*a, t_stack	*b, t_log	*log, int	*cost)
 	int	cost_temp[7];
 	int	i;
 
-	i = -1;
-	while (i++ < 7)
+	i = 0;
+	while (i < 7)
+	{
 		cost_temp[i] = cost[i];
+		i++;
+	}
 	while (cost_temp[3]-- > 0)
 		rr(a, b, log);
 	while (cost_temp[1]-- > 0)
