@@ -54,7 +54,7 @@ void	find_best_percentiles(t_stack	*a, t_stack	*b, int	*p)
 		while (percent[1] <= 40)
 		{
 			eval_percent(a, b, percent, &best_percents);
-			if (n > 100 && best_percents.min_ops < (int)(n * (3 + log_2_n(n))))
+			if (n > 100 && best_percents.min_ops < (n * (3 + log_2_n(n))))
 				break ;
 			percent[1]++;
 		}

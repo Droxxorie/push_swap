@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-unsigned	int	log_2_n(unsigned int n)
+int	log_2_n(unsigned int n)
 {
 	unsigned int	log;
 
