@@ -16,9 +16,9 @@ static	void	swap(t_stack	*stack)
 {
 	int	temp;
 
-	if (stack->size < 2)
+	if (stack->size < 2 || stack->top >= stack->size - 1)
 		return ;
-	if (stack->top > 0)
+	if (stack->top >= 0)
 	{
 		temp = stack->array[stack->top];
 		stack->array[stack->top] = stack->array[stack->top + 1];

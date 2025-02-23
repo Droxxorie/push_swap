@@ -28,7 +28,7 @@ int	main(int argc, char	**argv)
 	t_stack	b;
 	t_log	*log;
 
-	if (argc <= 2)
+	if (argc < 2)
 		return (0);
 	initialize(argc, argv, &a, &b);
 	log = init_log(10);

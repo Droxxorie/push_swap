@@ -74,7 +74,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strcmp(const	char *s1, const char *s2);
 void	log_operations(t_log *log, char *operation);
 char	*ft_strjoin(char const *s1, char const *s2);
-void	checker(t_stack	*a, t_stack	*b, t_log	*log);
+int		checker(t_stack	*a, t_stack	*b, t_log	*log);
 void	initialize(int argc, char **argv, t_stack *a, t_stack *b);
 
 #endif

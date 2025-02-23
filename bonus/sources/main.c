@@ -12,6 +12,16 @@
 
 #include "checker.h"
 
+static	void	free_all(t_stack *a, t_stack *b, t_log *log)
+{
+	if (a->array)
+		free(a->array);
+	if (b->array)
+		free(b->array);
+	if (log)
+		free_log(log);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
@@ -24,16 +34,17 @@ int	main(int argc, char **argv)
 	log = init_log(10);
 	if (!log || !a.array || !b.array)
 	{
+		free_all(&a, &b, log);
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
-	checker(&a, &b, log);
-	if (stack_is_sorted(&a))
-		ft_putstr_fd("OK\n", 1);
-	else
-		ft_putstr_fd("KO\n", 1);
-	free(a.array);
-	free(b.array);
-	free_log(log);
+	if (checker(&a, &b, log))
+	{
+		if (stack_is_sorted(&a) && stack_is_empty(&b))
+			ft_putstr_fd("OK\n", 1);
+		else
+			ft_putstr_fd("KO\n", 1);
+	}
+	free_all(&a, &b, log);
 	return (1);
 }

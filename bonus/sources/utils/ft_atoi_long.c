@@ -33,6 +33,8 @@ long	ft_atoi_long(const char *nptr)
 		result = result * 10 + (*nptr - '0');
 		nptr++;
 	}
+	if (*nptr && !(*nptr >= '0' && *nptr <= '9'))
+		return (0);
 	if (result * sign < INT_MIN || result * sign > INT_MAX)
 		return (0);
 	return (result * sign);

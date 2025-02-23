@@ -71,7 +71,7 @@ static	int	second_log_check(t_log	*log, t_log	*new_log, int i)
 // Check the log, return 1 if an operation as been changed
 static	int	third_log_check(t_log	*log, t_log	*new_log, int i)
 {
-	if ((i < log->index - 1) && (!ft_strcmp(log->entries[i], "ra")
+	if ((i < log->index - 2) && (!ft_strcmp(log->entries[i], "ra")
 			&& !ft_strcmp(log->entries[i + 1], "pb")
 			&& !ft_strcmp(log->entries[i + 2], "rra")))
 	{
@@ -79,7 +79,8 @@ static	int	third_log_check(t_log	*log, t_log	*new_log, int i)
 		log_operations(new_log, "pb");
 		return (1);
 	}
-	else if (!ft_strcmp(log->entries[i], "rb")
+	else if ((i < log->index - 2)
+		&& !ft_strcmp(log->entries[i], "rb")
 		&& !ft_strcmp(log->entries[i + 1], "pa")
 		&& !ft_strcmp(log->entries[i + 2], "rrb"))
 	{
@@ -113,7 +114,8 @@ t_log	*check_log(t_log	*log)
 			i++;
 		}
 	}
-	log_operations(new_log, log->entries[i]);
+	if (i == log->index - 1)
+		log_operations(new_log, log->entries[i]);
 	free_log(log);
 	return (new_log);
 }

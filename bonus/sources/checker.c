@@ -68,24 +68,28 @@ static void	apply_operation(t_stack *a, t_stack *b, t_log *log, char *op)
 }
 
 // Check the operations and apply them
-void	checker(t_stack	*a, t_stack	*b, t_log	*log)
+// return 1 if all the operations are valid
+int	checker(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	char	*line;
 
+	if (stack_is_sorted(a))
+		return (0);
 	line = get_next_line(0);
 	if (!line)
-		return ;
+		return (0);
 	while (line)
 	{
 		if (!check_operation(line))
 		{
 			free(line);
 			ft_putstr_fd("Error\n", 2);
-			return ;
+			return (0);
 		}
 		apply_operation(a, b, log, line);
 		free(line);
 		line = get_next_line(0);
 	}
 	free(line);
+	return (1);
 }
