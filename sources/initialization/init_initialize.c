@@ -35,7 +35,6 @@ static	int	*create_array(int argc, char **argv)
 	int	i;
 	int	*array;
 
-
 	array = malloc((argc - 1) * sizeof(int));
 	if (!array)
 		return (NULL);
