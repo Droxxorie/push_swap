@@ -15,27 +15,27 @@
 // Check if the operation is valid return 1 if it is
 static	int	check_operation(char *line)
 {
-	if (!ft_strcmp(line, "sa"))
+	if (!ft_strcmp(line, "sa\n"))
 		return (1);
-	else if (!ft_strcmp(line, "sb"))
+	else if (!ft_strcmp(line, "sb\n"))
 		return (1);
-	else if (!ft_strcmp(line, "ss"))
+	else if (!ft_strcmp(line, "ss\n"))
 		return (1);
-	else if (!ft_strcmp(line, "pa"))
+	else if (!ft_strcmp(line, "pa\n"))
 		return (1);
-	else if (!ft_strcmp(line, "pb"))
+	else if (!ft_strcmp(line, "pb\n"))
 		return (1);
-	else if (!ft_strcmp(line, "ra"))
+	else if (!ft_strcmp(line, "ra\n"))
 		return (1);
-	else if (!ft_strcmp(line, "rb"))
+	else if (!ft_strcmp(line, "rb\n"))
 		return (1);
-	else if (!ft_strcmp(line, "rr"))
+	else if (!ft_strcmp(line, "rr\n"))
 		return (1);
-	else if (!ft_strcmp(line, "rra"))
+	else if (!ft_strcmp(line, "rra\n"))
 		return (1);
-	else if (!ft_strcmp(line, "rrb"))
+	else if (!ft_strcmp(line, "rrb\n"))
 		return (1);
-	else if (!ft_strcmp(line, "rrr"))
+	else if (!ft_strcmp(line, "rrr\n"))
 		return (1);
 	return (0);
 }
@@ -43,44 +43,28 @@ static	int	check_operation(char *line)
 // Apply the operation to the stack
 static void	apply_operation(t_stack *a, t_stack *b, t_log *log, char *op)
 {
-	if (!ft_strcmp(op, "sa"))
+	if (!ft_strcmp(op, "sa\n"))
 		sa(a, log);
-	else if (!ft_strcmp(op, "sb"))
+	else if (!ft_strcmp(op, "sb\n"))
 		sb(b, log);
-	else if (!ft_strcmp(op, "ss"))
+	else if (!ft_strcmp(op, "ss\n"))
 		ss(a, b, log);
-	else if (!ft_strcmp(op, "pa"))
+	else if (!ft_strcmp(op, "pa\n"))
 		pa(a, b, log);
-	else if (!ft_strcmp(op, "pb"))
+	else if (!ft_strcmp(op, "pb\n"))
 		pb(b, a, log);
-	else if (!ft_strcmp(op, "ra"))
+	else if (!ft_strcmp(op, "ra\n"))
 		ra(a, log);
-	else if (!ft_strcmp(op, "rb"))
+	else if (!ft_strcmp(op, "rb\n"))
 		rb(b, log);
-	else if (!ft_strcmp(op, "rr"))
+	else if (!ft_strcmp(op, "rr\n"))
 		rr(a, b, log);
-	else if (!ft_strcmp(op, "rra"))
+	else if (!ft_strcmp(op, "rra\n"))
 		rra(a, log);
-	else if (!ft_strcmp(op, "rrb"))
+	else if (!ft_strcmp(op, "rrb\n"))
 		rrb(b, log);
-	else if (!ft_strcmp(op, "rrr"))
+	else if (!ft_strcmp(op, "rrr\n"))
 		rrr(a, b, log);
-}
-
-static	void	small_parse(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '\n')
-		{
-			str[i] = '\0';
-			return ;
-		}
-		i++;
-	}
 }
 
 // Check the operations and apply them
@@ -93,7 +77,6 @@ void	checker(t_stack	*a, t_stack	*b, t_log	*log)
 		return ;
 	while (line)
 	{
-		small_parse(line);
 		if (!check_operation(line))
 		{
 			free(line);

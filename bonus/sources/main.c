@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	checker(&a, &b, log);
-	if (stack_is_sorted(&a) && stack_is_empty(&b))
+	if (stack_is_sorted(&a))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);

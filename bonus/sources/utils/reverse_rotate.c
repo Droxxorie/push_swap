@@ -17,7 +17,7 @@ static	void	reverse_rotate(t_stack	*stack)
 	int	last;
 	int	i;
 
-	if (stack->top < 1)
+	if (stack->top < 0)
 		return ;
 	last = stack->array[stack->size - 1];
 	i = stack->size - 1;

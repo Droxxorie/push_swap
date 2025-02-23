@@ -57,6 +57,7 @@ int		stack_is_empty(t_stack	*stack);
 int		stack_is_full(t_stack	*stack);
 int		stack_is_sorted(t_stack	*stack);
 void	init_stack(t_stack *stack, int size);
+unsigned	int	log_2_n(unsigned int n);
 
 // Errors
 int		error_doubles(int argc, int *array);

@@ -45,7 +45,6 @@ int		error_doubles(int argc, int *array);
 // Parsing
 long	ft_atoi_long(const char *nptr);
 void	normalise(int *array, int size);
-int		*stock_in_array(int argc, char **argv);
 
 // Operations
 void	sa(t_stack	*a, t_log	*log);
