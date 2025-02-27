@@ -6,17 +6,17 @@
 #    By: eraad <eraad@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 14:33:34 by eraad             #+#    #+#              #
-#    Updated: 2025/02/23 13:26:18 by eraad            ###   ########.fr        #
+#    Updated: 2025/02/27 16:10:37 by eraad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Variables
 NAME		= push_swap
-BONUS_NAME	= checker
+NAME_BONUS	= checker
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -ggdb3
 INCLUDE		= -I./include
-BONUS_INCLUDE	= -I./bonus/include
+INCLUDE_BONUS	= -I./bonus/include_bonus
 
 #Colors
 DEF = \033[0m
@@ -44,18 +44,18 @@ SRC_FILES		=	cost/compute_cost_cases.c cost/compute_cost_reverse_rotate.c cost/c
 SRCS = $(addprefix $(SRCS_DIR), $(SRC_FILES))
 
 #Bonus
-BONUS_SRCS_DIR	=	bonus/sources/
-BONUS_SRC_FILES	=	utils/error_doubles.c utils/free_log.c utils/free_stack.c utils/ft_atoi_long.c utils/ft_putchar_fd.c utils/ft_putstr_fd.c utils/ft_strcmp.c utils/get_next_line_utils.c utils/get_next_line.c utils/init_initialize.c utils/init_log.c utils/init_stack.c utils/log_operations.c utils/normalise.c utils/push.c utils/reverse_rotate.c utils/rotate.c utils/stack_is_empty.c utils/stack_is_full.c utils/stack_is_sorted.c utils/swap.c \
+SRCS_DIR_BONUS	=	bonus/sources_bonus/
+SRC_FILES_BONUS	=	utils/error_doubles.c utils/free_log.c utils/free_stack.c utils/ft_atoi_long.c utils/ft_putchar_fd.c utils/ft_putstr_fd.c utils/ft_strcmp.c utils/get_next_line_utils.c utils/get_next_line.c utils/init_initialize.c utils/init_log.c utils/init_stack.c utils/log_operations.c utils/normalise.c utils/push.c utils/reverse_rotate.c utils/rotate.c utils/stack_is_empty.c utils/stack_is_full.c utils/stack_is_sorted.c utils/swap.c \
 					checker.c \
 					main.c
 
-BONUS_SRCS = $(addprefix $(BONUS_SRCS_DIR), $(BONUS_SRC_FILES))
+SRCS_BONUS = $(addprefix $(SRCS_DIR_BONUS), $(SRC_FILES_BONUS))
 
 #Objects
 OBJS_DIR		=	objects/
 OBJS			=	$(patsubst $(SRCS_DIR)%.c, $(OBJS_DIR)%.o, $(SRCS))
-BONUS_OBJS_DIR	=	bonus/objects/
-BONUS_OBJS		=	$(patsubst $(BONUS_SRCS_DIR)%.c, $(BONUS_OBJS_DIR)%.o, $(BONUS_SRCS))
+OBJS_DIR_BONUS	=	bonus/objects_bonus/
+OBJS_BONUS		=	$(patsubst $(SRCS_DIR_BONUS)%.c, $(OBJS_DIR_BONUS)%.o, $(SRCS_BONUS))
 
 #Rules
 all: $(NAME)
@@ -75,27 +75,27 @@ $(OBJS_DIR)%.o: $(SRCS_DIR)%.c
 				@echo "$(Y)- Compiling $<...$(DEF)"
 				@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
-bonus: all $(BONUS_NAME)
+bonus: $(NAME_BONUS)
 
-$(BONUS_NAME): $(BONUS_OBJS)
+$(NAME_BONUS): $(OBJS_BONUS)
 				@echo "_________________________________________________"
-				@echo "$(G)\n--- Creating $(BONUS_NAME)...\n$(DEF)"
-				@$(CC) $(CFLAGS) $(BONUS_OBJS) -o $(BONUS_NAME)
+				@echo "$(G)\n--- Creating $(NAME_BONUS)...\n$(DEF)"
+				@$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS)
 				@echo "$(NEON_GREEN)     ---------------------------------------$(DEF)"
-				@echo "$(NEON_GREEN)     |    $(BONUS_NAME) compiled succesfully!    |$(DEF)"
+				@echo "$(NEON_GREEN)     |    $(NAME_BONUS) compiled succesfully!    |$(DEF)"
 				@echo "$(NEON_GREEN)     ---------------------------------------$(DEF)"
 				@echo "_________________________________________________\n"
 
-$(BONUS_OBJS_DIR)%.o: $(BONUS_SRCS_DIR)%.c
+$(OBJS_DIR_BONUS)%.o: $(SRCS_DIR_BONUS)%.c
 				@mkdir -p $(dir $@)
 				@echo "$(Y)- Compiling $<...$(DEF)"
-				@$(CC) $(CFLAGS) $(BONUS_INCLUDE) -c -o $@ $<
+				@$(CC) $(CFLAGS) $(INCLUDE_BONUS) -c -o $@ $<
 
 clean:
 				@echo "_________________________________________________"
 				@echo "$(ORANGE)\n--- Cleaning objects files...\n$(DEF)"
 				@rm -rf $(OBJS_DIR)
-				@rm -rf $(BONUS_OBJS_DIR)
+				@rm -rf $(OBJS_DIR_BONUS)
 				@echo "$(R)            * Objects files cleaned!$(DEF)"
 				@echo "_________________________________________________\n"
 
@@ -104,7 +104,7 @@ fclean: clean
 				@echo "_________________________________________________"
 				@echo "$(ORANGE)\n--- Cleaning programs...\n$(DEF)"
 				@rm -f $(NAME)
-				@rm -f $(BONUS_NAME)
+				@rm -f $(NAME_BONUS)
 				@echo "$(R)            * Programs Cleaned!$(DEF)"
 				@echo "_________________________________________________\n"
 
@@ -112,4 +112,6 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONY: all clean fclean re bonus
+re_bonus: fclean $(NAME_BONUS)
+
+.PHONY: all clean fclean re bonus re_bonus
