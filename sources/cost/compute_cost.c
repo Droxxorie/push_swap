@@ -24,7 +24,7 @@ static	void	copy_cost(int *cost, int *temp)
 	}
 }
 
-// finds minimum case and returns it
+//* finds minimum case and returns it
 static void	find_min_cost(int *n_ops, int *cost)
 {
 	int	cost_case_1[7];
@@ -46,7 +46,7 @@ static void	find_min_cost(int *n_ops, int *cost)
 	return ;
 }
 
-// computes the cost of each case and returns the minimum cost
+//* computes the cost of each case and returns the minimum cost
 void	compute_cost(t_stack *a, t_stack *b, int i, int *cost)
 {
 	int	n_ra;

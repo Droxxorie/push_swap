@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//* Evaluate if the current percentiles are the best 
+//* and update the best percentiles if they are
 void	eval_percent(t_stack	*a, t_stack	*b, int *p, t_pct	*best_p)
 {
 	t_log	*temp_log;
@@ -37,6 +39,8 @@ void	eval_percent(t_stack	*a, t_stack	*b, int *p, t_pct	*best_p)
 	free_log(temp_log);
 }
 
+//* Find the best percentiles for the dynamic quick sort algorithm
+//* by iterating over the percentiles and evaluating the number of operations
 void	find_best_percentiles(t_stack	*a, t_stack	*b, int	*p)
 {
 	t_pct	best_percents;
@@ -64,6 +68,13 @@ void	find_best_percentiles(t_stack	*a, t_stack	*b, int	*p)
 	p[1] = best_percents.percentile_2;
 }
 
+//* Sort the stack a using the push_swap algorithm
+//* by first finding the best percentiles for the dynamic quick sort
+//* then sorting the stack using the dynamic quick sort
+//* then sorting the stack using the dynamic insertion sort
+//* then sorting the stack back to the original order
+//* then checking the log for redundant or unnecessary operations
+//* and finally printing the operations
 void	push_swap(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	int	percentiles[2];

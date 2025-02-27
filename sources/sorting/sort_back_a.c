@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// sort back the stack a by ra or rra
+//* sort back the stack a by ra or rra depending on the index of the min
 void	sort_back_a(t_stack	*a, t_log	*log)
 {
 	int	min_index;

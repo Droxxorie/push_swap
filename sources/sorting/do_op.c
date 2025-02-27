@@ -12,8 +12,8 @@
 
 #include "push_swap.h"
 
-// [cost, ra, rb, rr, rra, rrb, rrr]
-// apply the minimum cost operation
+//* [cost, ra, rb, rr, rra, rrb, rrr]
+//* apply the minimum cost operation
 void	do_op(t_stack	*a, t_stack	*b, t_log	*log, int	*cost)
 {
 	int	cost_temp[7];

@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-//Check if each element is unique, return 1 if it is not the case
+//* Check if each element is unique, return 1 if it is not the case
 int	error_doubles(int argc, int *array)
 {
 	int	i;

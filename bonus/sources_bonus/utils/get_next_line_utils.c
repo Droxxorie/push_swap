@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* Get the length of a string
 size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -24,6 +25,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
+//* Duplicate a string
 char	*ft_strdup(const char *s)
 {
 	int		i;
@@ -45,6 +47,7 @@ char	*ft_strdup(const char *s)
 	return (dup);
 }
 
+//* Join two strings
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
@@ -74,6 +77,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
+//* Find the last occurence of a character in a string
 char	*ft_strrchr(const char *s, int c)
 {
 	const char		*last;

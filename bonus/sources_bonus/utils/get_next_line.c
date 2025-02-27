@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* cut the line from the buffer
 char	*ft_clean_line(char *str)
 {
 	int		i;
@@ -37,6 +38,7 @@ char	*ft_clean_line(char *str)
 	return (line);
 }
 
+//* cut the leftover from the buffer
 char	*ft_leftover(char *str)
 {
 	int		i;
@@ -63,6 +65,7 @@ char	*ft_leftover(char *str)
 	return (leftover);
 }
 
+//* read the buffer
 char	*ft_read_str(int fd, char *str)
 {
 	char	*buffer;
@@ -91,6 +94,7 @@ char	*ft_read_str(int fd, char *str)
 	return (str);
 }
 
+//* get the next line from the buffer
 char	*get_next_line(int fd)
 {
 	static char	*str;

@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Initialize the log with an initial capacity
 t_log	*init_log(int initial_capacity)
 {
 	t_log	*log;

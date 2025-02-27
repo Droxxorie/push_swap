@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-// Check if the stack is empty by looking at top, return 1 if empty, 0 if not
+//* Check if the stack is empty by looking at top, return 1 if empty, 0 if not
 int	stack_is_empty(t_stack	*stack)
 {
 	if (stack->top >= stack->size)

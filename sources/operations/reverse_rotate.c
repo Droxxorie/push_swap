@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//* Reverse rotate the stack, the last element becomes the first
+//* the first element becomes the second, and so on
 static	void	reverse_rotate(t_stack	*stack)
 {
 	int	last;
@@ -29,18 +31,21 @@ static	void	reverse_rotate(t_stack	*stack)
 	stack->array[stack->top] = last;
 }
 
+//* Reverse rotate the stack a
 void	rra(t_stack	*a, t_log	*log)
 {
 	reverse_rotate(a);
 	log_operations(log, "rra");
 }
 
+//* Reverse rotate the stack b
 void	rrb(t_stack	*b, t_log	*log)
 {
 	reverse_rotate(b);
 	log_operations(log, "rrb");
 }
 
+//* Reverse rotate the stack a and b
 void	rrr(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	reverse_rotate(a);

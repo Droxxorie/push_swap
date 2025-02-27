@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Check the log, return 1 if nothing is to discard
+//* Check the log, return 1 if an operation needs to be changed
 static	int	first_log_check(t_log	*log, int i)
 {
 	if ((!ft_strcmp(log->entries[i], "ra")
@@ -38,7 +38,7 @@ static	int	first_log_check(t_log	*log, int i)
 	return (0);
 }
 
-// Check the log, return 1 if an operation as been changed
+//* Check the log, return 1 if an operation needs to be changed
 static	int	second_log_check(t_log	*log, t_log	*new_log, int i)
 {
 	if ((!ft_strcmp(log->entries[i], "ra")
@@ -68,7 +68,7 @@ static	int	second_log_check(t_log	*log, t_log	*new_log, int i)
 	return (0);
 }
 
-// Check the log, return 1 if an operation as been changed
+//* Check the log, return 1 if an operation needs to be changed
 static	int	third_log_check(t_log	*log, t_log	*new_log, int i)
 {
 	if ((i < log->index - 2) && (!ft_strcmp(log->entries[i], "ra")
@@ -91,6 +91,7 @@ static	int	third_log_check(t_log	*log, t_log	*new_log, int i)
 	return (0);
 }
 
+//* Check the log for operations that can be optimized and apply them
 t_log	*check_log(t_log	*log)
 {
 	t_log	*new_log;

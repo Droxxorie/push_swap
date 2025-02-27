@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Print the log to the standard output
 void	print_log(t_log	*log)
 {
 	int	i;

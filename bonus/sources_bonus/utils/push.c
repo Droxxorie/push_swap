@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-// Pushes an element to the top of the stack if there is space
+//* Pushes an element to the top of the stack if there is space
 static	void	push(t_stack *stack, int data)
 {
 	if (stack_is_full(stack))
@@ -21,7 +21,7 @@ static	void	push(t_stack *stack, int data)
 	stack->array[stack->top] = data;
 }
 
-// Pop the top lement of the stack by decrementing the top index
+//* Pop the top lement of the stack by decrementing the top index
 static	int	pop(t_stack *stack)
 {
 	int	data;
@@ -33,6 +33,7 @@ static	int	pop(t_stack *stack)
 	return (data);
 }
 
+//* Push the top element of stack b to stack a
 void	pa(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	if (stack_is_empty(b))
@@ -41,6 +42,7 @@ void	pa(t_stack	*a, t_stack	*b, t_log	*log)
 	log_operations(log, "pa");
 }
 
+//* Push the top element of stack a to stack b
 void	pb(t_stack	*b, t_stack	*a, t_log	*log)
 {
 	if (stack_is_empty(a))

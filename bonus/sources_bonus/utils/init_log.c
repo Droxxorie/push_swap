@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* Initialize the log
 t_log	*init_log(int initial_capacity)
 {
 	t_log	*log;

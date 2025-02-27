@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-// atoi but long
+//* atoi but long, return 0 if the number is too big
 long	ft_atoi_long(const char *nptr)
 {
 	long	result;

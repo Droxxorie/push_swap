@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Return the log base 2 of n
 int	log_2_n(unsigned int n)
 {
 	unsigned int	log;

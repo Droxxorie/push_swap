@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-// swap two pointers
+//* swap two pointers
 static	void	swap(int *a, int *b)
 {
 	int	temp;
@@ -22,7 +22,7 @@ static	void	swap(int *a, int *b)
 	*b = temp;
 }
 
-// chunking of the array to sort
+//* chunking of the array to sort
 static	int	partition(int *array, int low, int high)
 {
 	int	pivot;
@@ -42,7 +42,7 @@ static	int	partition(int *array, int low, int high)
 	return (i + 1);
 }
 
-// quick sort algo
+//* quick sort algo to sort the array
 static	void	normalise_quick_sort(int *array, int low, int high)
 {
 	int	pivot;
@@ -55,6 +55,7 @@ static	void	normalise_quick_sort(int *array, int low, int high)
 	}
 }
 
+//* binary search algo to find the index of the element in the sorted array
 static	int	binary_search(int *array, int size, int target)
 {
 	int	left;
@@ -76,7 +77,7 @@ static	int	binary_search(int *array, int size, int target)
 	return (-1);
 }
 
-//normalise the input as an array so we work only with Natural numbers
+//* normalise the input as an array so we work only with unsigned integers
 void	normalise(int *array, int size)
 {
 	int	*sorted_array;

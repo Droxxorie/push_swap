@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Check if the stack is full by looking at top, return 1 if full, 0 if not
+//* Check if the stack is full by looking at top, return 1 if full, 0 if not
 int	stack_is_full(t_stack	*stack)
 {
 	if (stack->top == 0)

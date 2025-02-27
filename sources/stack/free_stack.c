@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Free the stack
 void	free_stack(t_stack	*stack)
 {
 	if (!stack || !stack->array)

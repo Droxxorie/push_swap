@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Swap the top two elements of the stack
 static	void	swap(t_stack	*stack)
 {
 	int	temp;
@@ -26,18 +27,21 @@ static	void	swap(t_stack	*stack)
 	}
 }
 
+//* Swap the top two elements of stack a
 void	sa(t_stack	*a, t_log	*log)
 {
 	swap(a);
 	log_operations(log, "sa");
 }
 
+//* Swap the top two elements of stack b
 void	sb(t_stack	*b, t_log	*log)
 {
 	swap(b);
 	log_operations(log, "sb");
 }
 
+//* Swap the top two elements of stack a and b
 void	ss(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	swap(a);

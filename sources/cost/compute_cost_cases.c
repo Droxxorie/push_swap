@@ -12,8 +12,8 @@
 
 #include "push_swap.h"
 
-// [cost, ra, rb, rr, rra, rrb, rrr]
-// ra + rb - rr and bias added to favor rr
+//* [cost, ra, rb, rr, rra, rrb, rrr]
+//* Compute the cost of each operation cases and store it in the cost array
 void	compute_cost_case_1(int n_ra, int n_rb, int *cost)
 {
 	int	n_rr;

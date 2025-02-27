@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* Free all the allocated memory
 static	void	free_all(t_stack *a, t_stack *b, t_log *log)
 {
 	if (a->array)
@@ -22,6 +23,7 @@ static	void	free_all(t_stack *a, t_stack *b, t_log *log)
 		free_log(log);
 }
 
+//* Initialize the stacks and the log
 int	main(int argc, char **argv)
 {
 	t_stack	a;

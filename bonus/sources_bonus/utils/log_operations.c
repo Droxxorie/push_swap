@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* Expend the log if it is full
 static	void	expend_log(t_log *log)
 {
 	int		new_capacity;
@@ -33,6 +34,7 @@ static	void	expend_log(t_log *log)
 	log->capacity = new_capacity;
 }
 
+//* Add an operation to the log
 void	log_operations(t_log *log, char	*operation)
 {
 	if (log->index >= log->capacity)

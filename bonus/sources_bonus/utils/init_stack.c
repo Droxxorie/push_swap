@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* Initialize a stack
 void	init_stack(t_stack	*stack, int size)
 {
 	if (!stack)

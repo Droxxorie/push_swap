@@ -12,6 +12,7 @@
 
 #include "checker.h"
 
+//* Free the log
 void	free_log(t_log	*log)
 {
 	int	i;

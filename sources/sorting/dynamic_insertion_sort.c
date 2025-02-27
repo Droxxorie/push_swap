@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//* Compute the cost of the operations needed to insert an element into a
+//* and select the best element to insert
 void	dynamic_insertion_sort(t_stack *a, t_stack *b, t_log *log)
 {
 	int	cost[7];

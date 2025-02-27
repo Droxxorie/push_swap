@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Check if the number is zero
 static	int	is_zero(char	*str)
 {
 	int	i;
@@ -30,6 +31,7 @@ static	int	is_zero(char	*str)
 	return (1);
 }
 
+//* Create an array from the input
 static	int	*create_array(int argc, char **argv)
 {
 	int	i;
@@ -57,6 +59,8 @@ static	int	*create_array(int argc, char **argv)
 	return (array);
 }
 
+//* Initialize the stacks, creat an array from input, check errors
+//* normalise the array and fill stack a, return the stacks
 static	int	*init_1(int argc, char	**argv)
 {
 	int	*array;
@@ -84,6 +88,7 @@ static	int	*init_1(int argc, char	**argv)
 	return (array);
 }
 
+//* Stock the array in the stack
 static	void	stock_in_stack(t_stack	*stack, int *array, int size)
 {
 	int	i;
@@ -97,8 +102,8 @@ static	void	stock_in_stack(t_stack	*stack, int *array, int size)
 	free(array);
 }
 
-// Initialize the stacks, creat an array from input, check errors
-// normalise the array and fill stack a, return the stacks
+//* Initialize the stacks, creat an array from input, check errors
+//* normalise the array and fill stack a, return the stacks
 void	initialize(int argc, char **argv, t_stack *a, t_stack *b)
 {
 	int	*array;

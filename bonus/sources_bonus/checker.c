@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-// Check if the operation is valid return 1 if it is
+//* Check if the operation is valid return 1 if it is, 0 if not
 static	int	check_operation(char *line)
 {
 	if (!ft_strcmp(line, "sa\n"))
@@ -40,7 +40,7 @@ static	int	check_operation(char *line)
 	return (0);
 }
 
-// Apply the operation to the stack
+//* Apply the operation to the stack
 static void	apply_operation(t_stack *a, t_stack *b, t_log *log, char *op)
 {
 	if (!ft_strcmp(op, "sa\n"))
@@ -67,8 +67,8 @@ static void	apply_operation(t_stack *a, t_stack *b, t_log *log, char *op)
 		rrr(a, b, log);
 }
 
-// Check the operations and apply them
-// return 1 if all the operations are valid
+//* Check the operations and apply them
+//* return 1 if all the operations are valid
 int	checker(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	char	*line;

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Finds the value of the percentile of the stack
+//* Compute the index of the element at the percentile
 static	int	find_percentile(t_stack	*stack, int percentile)
 {
 	int	index;
@@ -25,9 +25,8 @@ static	int	find_percentile(t_stack	*stack, int percentile)
 	return (stack->top + index);
 }
 
-// More effective for > 100 elements should create 2 cases
-// Pushes elements from a to b based on the median and first
-// quartile of the disrectized stack a
+//* Quick sort the stack a and push the elements to stack b
+//* based on the percentile
 void	dynamic_quick_sort(t_stack *a, t_stack	*b, t_log *log, int *p)
 {
 	int	pivot_1;

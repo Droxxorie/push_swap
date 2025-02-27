@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Compute the number of ra needed to put the element in the right place in a
+//* Compute the number of ra needed to put the element in the right place in a
 int	compute_n_ra(t_stack *a, t_stack *b, int i)
 {
 	int	max_index;
@@ -35,7 +35,7 @@ int	compute_n_ra(t_stack *a, t_stack *b, int i)
 	return (0);
 }
 
-// Compute the number of rb needed to put the element at the top of the stack
+//* Compute the number of rb needed to put the element at the top of the stack
 int	compute_n_rb(t_stack *b, int i)
 {
 	int	n_rb;
@@ -46,7 +46,7 @@ int	compute_n_rb(t_stack *b, int i)
 	return (n_rb);
 }
 
-// Compute the number of rr needed to put the element in the right place in a
+//* Compute the number of rr needed to put the element in the right place in a
 int	compute_n_rr(int n_ra, int n_rb)
 {
 	if (n_ra == n_rb)

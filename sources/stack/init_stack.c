@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Initialize the stack
 void	init_stack(t_stack	*stack, int size)
 {
 	if (!stack)

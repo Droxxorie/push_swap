@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// atoi but long
+//* atoi but long
 long	ft_atoi_long(const char *nptr)
 {
 	long	result;

@@ -12,7 +12,7 @@
 
 #include "checker.h"
 
-// Rotate stack but with differents names for visibility
+//* Rotate the stack, shift up all elements of the stack by 1
 static	void	rotate(t_stack	*stack)
 {
 	int	first;
@@ -30,18 +30,21 @@ static	void	rotate(t_stack	*stack)
 	stack->array[stack->size - 1] = first;
 }
 
+//* Rotate the stack a
 void	ra(t_stack	*a, t_log	*log)
 {
 	rotate(a);
 	log_operations(log, "ra");
 }
 
+//* Rotate the stack b
 void	rb(t_stack	*b, t_log	*log)
 {
 	rotate(b);
 	log_operations(log, "rb");
 }
 
+//* Rotate the stack a and b
 void	rr(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	rotate(a);

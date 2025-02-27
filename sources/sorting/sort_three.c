@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+//* Sort three elements in the stack a using the minimum number of operations
 void	sort_three(t_stack	*a, t_log	*log)
 {
 	int	top;

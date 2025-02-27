@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-// Find the minimum value in the stack
+//* Find the minimum value in the stack
 int	find_min_index(t_stack	*stack)
 {
 	int	min_index;
@@ -29,7 +29,7 @@ int	find_min_index(t_stack	*stack)
 	return (min_index);
 }
 
-// Find the maximum value in the stack
+//* Find the maximum value in the stack
 int	find_max_index(t_stack	*stack)
 {
 	int	max_index;
