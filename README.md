@@ -205,7 +205,7 @@ OK
 
 ## Auteur
 
-Projet réalisé par **[@eraad](mailto:eraad@student.42.fr)** dans le cadre du cursus de l'**Ecole 42**.
+Projet réalisé par **[@eraad](https://profile.intra.42.fr/users/eraad)** dans le cadre du cursus de l'**Ecole 42**.
 
 ---
 
