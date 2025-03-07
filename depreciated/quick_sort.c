@@ -31,7 +31,7 @@
 // 	}
 // }
 
-static	int	*partition_pivot(t_stack	*a, t_stack	*b, int	pivot, int	size, t_log	*log)
+static	int	*partition_pivot(t_stack *a, t_stack *b, int pivot, int size, t_log *log)
 {
 	int	i;
 	int	*push_count;

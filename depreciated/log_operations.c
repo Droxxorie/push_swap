@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 // Realloc memory for the operations log
-static	void	expand_log(char ***operations_log, int	*log_index, int	log_capacity)
+static void	expand_log(char ***operations_log, int *log_index, int log_capacity)
 {
 	int		new_capacity;
 	char	**new_log;
@@ -22,7 +22,7 @@ static	void	expand_log(char ***operations_log, int	*log_index, int	log_capacity)
 	new_capacity = *log_capacity * 2;
 	new_log = (char **)malloc(sizeof(char *) * new_capacity);
 	if (!new_log)
-		return;
+		return ;
 	i = 0;
 	while (i < *log_index)
 	{
@@ -35,7 +35,7 @@ static	void	expand_log(char ***operations_log, int	*log_index, int	log_capacity)
 }
 
 // Log the operation
-void	log_opperation(char ***operations_log, int	*log_index, char *operation, int	*log_capacity)
+void	log_opperation(char ***operations_log, int *log_index, char *operation, int *log_capacity)
 {
 	if (*log_index >= log_capacity)
 		expand_log(operations_log, log_index, log_capacity);

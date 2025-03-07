@@ -10,10 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-// Sort an array using bubble sort -> the function is used to normalise the array
-void	*bubble_sort(int	*array_to_sort, int	size)
+//* Sort an array using bubble sort
+//* the function is used to normalise the array
+void	*bubble_sort(int *array_to_sort, int size)
 {
 	int	temp;
 	int	swapped;
@@ -37,7 +38,7 @@ void	*bubble_sort(int	*array_to_sort, int	size)
 			j++;
 		}
 		if (!swapped)
-			break;
+			break ;
 		i++;
 	}
 }

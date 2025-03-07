@@ -16,5 +16,3 @@ void	push_swap(t_stack *a, t_stack *b, t_log *log)
 {
 	radix_sort(a, b, log);
 }
-
-

@@ -73,11 +73,9 @@ int	checker(t_stack	*a, t_stack	*b, t_log	*log)
 {
 	char	*line;
 
-	if (stack_is_sorted(a))
-		return (0);
 	line = get_next_line(0);
 	if (!line)
-		return (0);
+		return (1);
 	while (line)
 	{
 		if (!check_operation(line))

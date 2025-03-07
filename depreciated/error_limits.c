@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 // Check if < INT_MIN or > INT_MAX, return 1 if it is the case
-int	error_limits(long	i)
+int	error_limits(long i)
 {
 	if (i > INT_MAX || i < INT_MIN)
 	{

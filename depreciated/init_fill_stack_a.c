@@ -16,8 +16,8 @@
 int	fill_stack_a(t_stack *stacks, int *array, int size)
 {
 	t_list	*new;
-	int	*data;
-	int	i;
+	int		*data;
+	int		i;
 
 	i = 0;
 	while (i < size)

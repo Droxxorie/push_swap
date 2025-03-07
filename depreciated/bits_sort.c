@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static	void	bits_sort_base_2(t_stack	*a, t_stack	*b, t_log	*log, int	bit)
+static	void	bits_sort_base_2(t_stack *a, t_stack *b, t_log *log, int bit)
 {
 	int	j;
 
@@ -27,7 +27,7 @@ static	void	bits_sort_base_2(t_stack	*a, t_stack	*b, t_log	*log, int	bit)
 	}
 }
 
-static	void	bits_sort_base_4(t_stack	*a, t_stack	*b, t_log	*log, int	bit)
+static	void	bits_sort_base_4(t_stack *a, t_stack *b, t_log *log, int bit)
 {
 	int	j;
 
@@ -42,7 +42,7 @@ static	void	bits_sort_base_4(t_stack	*a, t_stack	*b, t_log	*log, int	bit)
 	}
 }
 
-static	void	bits_sort_base_8(t_stack	*a, t_stack	*b, t_log	*log, int	bit)
+static	void	bits_sort_base_8(t_stack *a, t_stack *b, t_log *log, int bit)
 {
 	int	j;
 
@@ -57,12 +57,12 @@ static	void	bits_sort_base_8(t_stack	*a, t_stack	*b, t_log	*log, int	bit)
 	}
 }
 
-void	bits_sort(t_stack	*a, t_stack	*b, t_log	*log, int	base, int	bit)
+void	bits_sort(t_stack *a, t_stack *b, t_log *log, int base, int bit)
 {
 	if (base)
 		bits_sort_base_2(a, b, log, bit);
 	else if (base == 4)
 		bits_sort_base_4(a, b, log, bit);
 	else
-		bits_sort_base_8(a, b ,log, bit);
+		bits_sort_base_8(a, b, log, bit);
 }

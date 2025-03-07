@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 // similar to np.arange in pyhton
-int	*ft_arange(int	start, int	end, int	step)
+int	*ft_arange(int start, int end, int step)
 {
 	int	*array;
 	int	i;

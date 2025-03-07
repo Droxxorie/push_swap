@@ -13,10 +13,10 @@
 #include "push_swap.h"
 
 // Not as efficient as the original implementation
-void	fill_cost_two_layers(int	*cost, int	*first_move_cost, int	*second_move_cost)
+void fill_cost_two_layers(int *cost, int *first_move_cost, int *second_move_cost)
 {
 	int	i;
-	
+
 	i = 0;
 	cost[0] = first_move_cost[0] + second_move_cost[0];
 	while (i++ < 7)
@@ -24,14 +24,14 @@ void	fill_cost_two_layers(int	*cost, int	*first_move_cost, int	*second_move_cost
 }
 
 // Computes the cost of two layers
-int	*compute_cost_two_layers(t_stack	*a, t_stack	*b, int	i)
+int	*compute_cost_two_layers(t_stack *a, t_stack *b, int i)
 {
-	int	*first_move_cost;
-	int	*second_move_cost;
-	int	*total_cost;
+	int		*first_move_cost;
+	int		*second_move_cost;
+	int		*total_cost;
 	t_stack	*a_copy;
 	t_stack	*b_copy;
-	t_log *dump;
+	t_log	*dump;
 
 	dump = init_log(10);
 	if (!dump)
@@ -81,7 +81,7 @@ int	*compute_cost_two_layers(t_stack	*a, t_stack	*b, int	i)
 	return (total_cost);
 }
 
-static	void	fill_cost_three_layers(int *cost, int *first_move_cost, int *second_move_cost, int *third_move_cost)
+static void fill_cost_three_layers(int *cost, int *first_move_cost, int *second_move_cost, int *third_move_cost)
 {
 	int	i;
 
@@ -93,10 +93,10 @@ static	void	fill_cost_three_layers(int *cost, int *first_move_cost, int *second_
 
 int	*compute_cost_three_layers(t_stack *a, t_stack *b, int i)
 {
-	int	*first_move_cost;
-	int	*second_move_cost;
-	int	*third_move_cost;
-	int	*total_cost;
+	int		*first_move_cost;
+	int		*second_move_cost;
+	int		*third_move_cost;
+	int		*total_cost;
 	t_stack	*a_copy1, *b_copy1;
 	t_stack	*a_copy2, *b_copy2;
 	t_log	*dump;
