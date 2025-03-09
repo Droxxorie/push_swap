@@ -61,15 +61,15 @@ int	*create_array(int argc, char **argv)
 	if (!array)
 		return (NULL);
 	i = 1;
-	while (i < argc - 1)
+	while (i < argc)
 	{
-		if (argv[i][0] == '\0')
+		if (argv[i][0] == '\0' || !argv[i])
 		{
 			free(array);
 			return (NULL);
 		}
-		array[i] = ft_atoi_long(argv[i]);
-		if (array[i] == 0 && !is_zero(argv[i]))
+		array[i - 1] = ft_atoi_long(argv[i]);
+		if (array[i - 1] == 0 && !is_zero(argv[i]))
 		{
 			free(array);
 			return (NULL);
@@ -89,7 +89,7 @@ int	*create_array_split(int argc, char **argv)
 	char	**words;
 
 	words = ft_split(argv[1], ' ');
-	if (!words)
+	if (!words || !words[0])
 		return (NULL);
 	array = malloc(argc * sizeof(int));
 	if (!array)

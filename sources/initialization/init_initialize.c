@@ -67,14 +67,14 @@ void	initialize(int argc, char **argv, t_stack *a, t_stack *b)
 	int	*array;
 
 	array = init_1(argc, argv);
-	if (argc == 2)
-		argc = count_words(argv[1], ' ') + 1;
 	if (!array)
 	{
 		a->array = NULL;
 		b->array = NULL;
 		return ;
 	}
+	if (argc == 2)
+		argc = count_words(argv[1], ' ') + 1;
 	init_stack(a, argc - 1);
 	init_stack(b, argc - 1);
 	if (!a->array || !b->array)
