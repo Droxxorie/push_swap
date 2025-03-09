@@ -10,6 +10,12 @@ Ce programme implémente un algorithme combinant **Quick Sort Dynamique** et **I
 
 ## Installation et compilation
 
+Cloner le repo :
+
+```sh
+git clone git@github.com:Droxxorie/push_swap.git push_swap && cd push_swap
+```
+
 La commande suivante compile le projet et génére le programme **push_swap** :
 
 ```sh
@@ -43,9 +49,15 @@ Le programme prend en argument une liste d'entiers et génère une séquence d'o
 ./push_swap [liste d'entiers]
 ```
 
+ou
+
+```sh
+./push_swap "[liste d'entiers]"
+```
+
 ### Exemples d'utilisation
 
-Entrée valide :
+Entrées valide :
 
 ```sh
 ./push_swap 4 3 2 1
@@ -58,10 +70,35 @@ pa
 pa
 ```
 
-Entrée invalide :
+```sh
+ARG="5 -1 2 10"; ./push_swap $ARG
+ra
+pb
+sa
+ra
+pa
+```
+
+```sh
+./push_swap "-10 500 499"
+sa
+rra
+```
+
+Entrées invalide :
 
 ```sh
 ./push_swap 4 3 deux 1
+Error
+```
+
+```sh
+./push_swap "-10 500 499" 1
+Error
+```
+
+```sh
+ARG="5 -1 2 5"; ./push_swap $ARG
 Error
 ```
 
@@ -163,6 +200,15 @@ Le programme prends en argument une liste d'entiers puis une fois éxectuer atte
 [...]
 ```
 
+ou
+
+```sh
+./checker "[liste d'entiers]"
+[opération]
+[opération]
+[...]
+```
+
 ### Exemples d'utilisation
 
 Si le tri est correct :
@@ -184,7 +230,7 @@ KO
 Si une erreur est détéctée :
 
 ```sh
-./checker 2 1 3
+./checker "2 1 3"
 bonjour
 Error
 ```
@@ -197,7 +243,7 @@ Error
 Peut s'utiliser avec push_swap :
 
 ```sh
-./push_swap 3 2 1 | ./checker 3 2 1
+ARG=3 2 1; ./push_swap $ARG | ./checker $ARG
 OK
 ```
 
