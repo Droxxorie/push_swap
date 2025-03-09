@@ -22,6 +22,8 @@ static int	is_zero(char *str)
 		i++;
 	if ((str[i] == '+' || str[i] == '-') && str[i + 1])
 		i++;
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (str[i] != '0')
