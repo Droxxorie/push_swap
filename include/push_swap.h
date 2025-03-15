@@ -13,12 +13,13 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+//* ----------------- Includes ----------------------- *
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-//* Structs
+//* ----------------- Structs ------------------------ *
 typedef struct s_stack
 {
 	int		*array;
@@ -40,7 +41,7 @@ typedef struct s_percentiles
 	int		percentile_2;
 }			t_pct;
 
-//* Utils
+//* ----------------- utils -------------------------- *
 int			ft_isdigit(int c);
 char		*ft_strdup(const char *s);
 void		ft_putstr_fd(char *s, int fd);
@@ -52,7 +53,7 @@ int			count_words(char const *s, char sep);
 int			ft_strcmp(const char *s1, const char *s2);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 
-//* Stack
+//* ----------------- Stack -------------------------- */
 int			log_2_n(unsigned int n);
 void		free_stack(t_stack *stack);
 t_stack		*copy_stack(t_stack *stack);
@@ -61,25 +62,25 @@ int			stack_is_full(t_stack *stack);
 int			stack_is_sorted(t_stack *stack);
 void		init_stack(t_stack *stack, int size);
 
-//* Errors
+//* ----------------- Error Handling ----------------- *
 int			error_doubles(int argc, int *array);
 
-//* Parsing
+//* ----------------- Parsing ------------------------ *
 long		ft_atoi_long(const char *nptr);
 void		normalise(int *array, int size);
 
-//* Initialisation
+//* ----------------- Initialization ----------------- */
 int			*create_array(int argc, char **argv);
 int			*create_array_split(int argc, char **argv);
 void		initialize(int argc, char **argv, t_stack *a, t_stack *b);
 
-//* Logging
+//* ----------------- Logging ------------------------ */
 void		free_log(t_log *log);
 void		print_log(t_log *log);
 t_log		*init_log(int initial_capacity);
 void		log_operations(t_log *log, char *operation);
 
-//* Operations
+//* ----------------- Operations --------------------- */
 void		sa(t_stack *a, t_log *log);
 void		sb(t_stack *b, t_log *log);
 void		ra(t_stack *a, t_log *log);
@@ -92,7 +93,7 @@ void		ss(t_stack *a, t_stack *b, t_log *log);
 void		rr(t_stack *a, t_stack *b, t_log *log);
 void		rrr(t_stack *a, t_stack *b, t_log *log);
 
-//* Cost
+//* ----------------- Cost Calculation --------------- */
 int			compute_n_rb(t_stack *b, int i);
 int			compute_n_rrb(t_stack *b, int i);
 int			compute_n_rr(int n_ra, int n_rb);
@@ -105,7 +106,7 @@ void		compute_cost_case_3(int n_rra, int n_rb, int *cost);
 void		compute_cost_case_4(int n_rra, int n_rrb, int *cost);
 void		compute_cost(t_stack *a, t_stack *b, int i, int *cost);
 
-//* Sorting
+//* ----------------- Sorting ------------------------ */
 t_log		*check_log(t_log *log);
 void		sort_three(t_stack *a, t_log *log);
 void		sort_back_a(t_stack *a, t_log *log);

@@ -13,11 +13,13 @@
 #ifndef CHECKER_H
 # define CHECKER_H
 
+//* ----------------- Includes ----------------------- *
 # include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
+//* ----------------- Structs ------------------------ *
 typedef struct s_stack
 {
 	int		*array;
@@ -32,21 +34,21 @@ typedef struct s_log
 	int		capacity;
 }			t_log;
 
-//* Stack
+//* ----------------- Stack -------------------------- *
 void		free_stack(t_stack *stack);
 int			stack_is_full(t_stack *stack);
 int			stack_is_empty(t_stack *stack);
 int			stack_is_sorted(t_stack *stack);
 void		init_stack(t_stack *stack, int size);
 
-//* Errors
+//* ----------------- Error Handling ----------------- *
 int			error_doubles(int argc, int *array);
 
-//* Parsing
+//* ----------------- Parsing ------------------------ *
 long		ft_atoi_long(const char *nptr);
 void		normalise(int *array, int size);
 
-//* Operations
+//* ----------------- Operations --------------------- *
 void		sa(t_stack *a, t_log *log);
 void		sb(t_stack *b, t_log *log);
 void		ra(t_stack *a, t_log *log);
@@ -59,7 +61,7 @@ void		ss(t_stack *a, t_stack *b, t_log *log);
 void		rr(t_stack *a, t_stack *b, t_log *log);
 void		rrr(t_stack *a, t_stack *b, t_log *log);
 
-//* Utils
+//* ----------------- Utils -------------------------- *
 void		free_log(t_log *log);
 char		*get_next_line(int fd);
 char		*ft_leftover(char *str);
